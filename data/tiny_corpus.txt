@@ -1,0 +1,20 @@
+Tokenization turns text into numbers. Embeddings turn sparse IDs into vectors.
+Language models use tokens, embeddings, residual streams, logits, and sampling.
+
+Byte-level BPE begins with UTF-8 bytes, then learns frequent adjacent merges.
+The tokenizer should preserve spaces, punctuation, emoji like 🔥, and accents like café.
+
+Swahili examples:
+Habari dunia. Kujifunza kuhusu tokenization na embeddings ni muhimu.
+Mfano mdogo unaonyesha jinsi maandishi yanavyogeuka kuwa nambari.
+
+Simple Python code:
+def add(a, b):
+    return a + b
+
+class Counter:
+    def __init__(self):
+        self.value = 0
+
+Numbers and symbols:
+123 456 3.14159 x_1 >= x_2 != y

@@ -1,0 +1,8 @@
+{
+  "English": "Tokenization changes text into token IDs for language models.",
+  "Swahili": "Habari dunia, tunajifunza jinsi maandishi yanavyokuwa nambari.",
+  "Arabic": "تحويل النص إلى رموز يساعد النماذج اللغوية.",
+  "Chinese": "分词把文本转换成模型可以处理的编号。",
+  "French": "La tokenisation transforme le texte en nombres utiles.",
+  "Python code": "def greet(name):\n    return f\"hello {name}\""
+}

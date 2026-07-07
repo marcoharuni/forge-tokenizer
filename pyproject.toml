@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forge-tokenizer"
+version = "0.1.0"
+description = "Educational reference implementations for tokenization and embeddings."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Marco Haruni" }]
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "pytest",
+    "tqdm",
+    "regex",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+forge-tokenizer = "forge_tokenizer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

@@ -1,0 +1,9 @@
+class TinyVocabulary:
+    def __init__(self):
+        self.token_to_count = {}
+
+    def add(self, token: str) -> None:
+        self.token_to_count[token] = self.token_to_count.get(token, 0) + 1
+
+    def most_common(self):
+        return sorted(self.token_to_count.items(), key=lambda item: (-item[1], item[0]))
