@@ -99,7 +99,7 @@ def ppmi_matrix(cooc: np.ndarray, eps: float = 1e-12) -> np.ndarray:
     col_sum = cooc.sum(axis=0, keepdims=True)
     expected = (row_sum @ col_sum) / total
     with np.errstate(divide="ignore", invalid="ignore"):
-        pmi = np.log((cooc * total + eps) / (expected + eps))
+        pmi = np.log((cooc + eps) / (expected + eps))
     return np.maximum(pmi, 0.0)
 
 
