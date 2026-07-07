@@ -96,9 +96,26 @@ def plot_embedding_neighbors_2d(embeddings, labels, output_path):
     if emb.shape[1] < 2:
         emb = np.pad(emb, ((0, 0), (0, 2 - emb.shape[1])))
     fig, ax = plt.subplots(figsize=(8, 5.5))
-    ax.scatter(emb[:, 0], emb[:, 1], color="#2563eb", s=34, edgecolor="white", linewidth=0.7)
+    ax.scatter(emb[:, 0], emb[:, 1], color="#2563eb", s=42, edgecolor="white", linewidth=0.8)
+    offsets = [(7, 6), (7, -10), (-7, 6), (-7, -10), (0, 12), (0, -14), (13, 0), (-13, 0)]
+    span_x = max(float(np.ptp(emb[:, 0])), 1e-9)
+    span_y = max(float(np.ptp(emb[:, 1])), 1e-9)
+    placed: list[tuple[float, float]] = []
     for x, y, label in zip(emb[:, 0], emb[:, 1], labels):
-        ax.annotate(label, (x, y), fontsize=8, xytext=(4, 3), textcoords="offset points")
+        nearby = sum(
+            ((x - px) / span_x) ** 2 + ((y - py) / span_y) ** 2 < 0.012
+            for px, py in placed
+        )
+        dx, dy = offsets[nearby % len(offsets)]
+        ax.annotate(
+            label,
+            (x, y),
+            fontsize=8,
+            xytext=(dx, dy),
+            textcoords="offset points",
+            bbox={"boxstyle": "round,pad=0.15", "fc": "white", "ec": "none", "alpha": 0.78},
+        )
+        placed.append((float(x), float(y)))
     ax.set_title("PPMI/SVD embedding geometry")
     ax.set_xlabel("SVD dimension 1")
     ax.set_ylabel("SVD dimension 2")

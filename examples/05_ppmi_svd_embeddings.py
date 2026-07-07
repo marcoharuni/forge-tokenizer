@@ -23,10 +23,19 @@ def main():
     print(f"vocab_size={len(word_to_idx)}")
     print(f"query={query}")
     print("neighbors=")
-    for word, score in nearest_neighbors(embeddings, word_to_idx, idx_to_word, query, k=8):
+    neighbor_rows = nearest_neighbors(embeddings, word_to_idx, idx_to_word, query, k=8)
+    for word, score in neighbor_rows:
         print(f"  {word}: {score:.3f}")
-    labels = [idx_to_word[i] for i in range(min(20, len(idx_to_word)))]
-    fig = plot_embedding_neighbors_2d(embeddings[: len(labels)], labels, ROOT / "generated" / "embedding_neighbors.png")
+    selected_words = []
+    for word in [query, *[word for word, _ in neighbor_rows], "embeddings", "tokens", "text", "numbers"]:
+        if word in word_to_idx and word not in selected_words:
+            selected_words.append(word)
+    selected_indices = [word_to_idx[word] for word in selected_words]
+    fig = plot_embedding_neighbors_2d(
+        embeddings[selected_indices, :2],
+        selected_words,
+        ROOT / "generated" / "embedding_neighbors.png",
+    )
     print(f"figure={fig.relative_to(ROOT)}")
 
 
