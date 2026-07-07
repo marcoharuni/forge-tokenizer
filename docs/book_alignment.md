@@ -19,6 +19,8 @@
 | `examples/05_ppmi_svd_embeddings.py` | Distributional embeddings |
 | `examples/06_embedding_neighbors.py` | Embedding geometry and analogies |
 | `examples/07_logit_lens_demo.py` | Unembedding and logit lens intuition |
+| `notebooks/tokenizer_playground.ipynb` | Guided tokenizer overview and first experiments |
+| `notebooks/embedding_geometry.ipynb` | Guided embedding geometry and unembedding overview |
 | `notebooks/03_bpe_merge_trace.ipynb` | Step-by-step BPE merge mechanics |
 | `notebooks/04_token_tax_lab.ipynb` | Multilingual token tax and single-token retention |
 | `notebooks/05_token_id_to_meaning.ipynb` | Token IDs, embeddings, unembedding, softmax, sampling |

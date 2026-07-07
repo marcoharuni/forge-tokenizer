@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "forge-tokenizer"
+authors:
+  - family-names: "Haruni"
+    given-names: "Marco"
+year: 2026
+license: MIT
+repository-code: "https://github.com/marcoharuni/forge-tokenizer"
+abstract: "Educational Python reference implementations for tokenization, tokenizer metrics, embedding geometry, unembedding, and sampling."

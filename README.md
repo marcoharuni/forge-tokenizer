@@ -52,7 +52,8 @@ python examples/07_logit_lens_demo.py
 
 ## Open In Colab
 
-You can run the learning notebooks directly in Google Colab:
+You can run the learning notebooks directly in Google Colab. Open a notebook,
+run the first **Install & Clone** cell, then continue from top to bottom.
 
 [![Open Tokenizer Playground in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/tokenizer_playground.ipynb)
 
@@ -66,8 +67,9 @@ You can run the learning notebooks directly in Google Colab:
 
 [![Open Chat Formatting Token Tax in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/06_chat_formatting_token_tax.ipynb)
 
-Each notebook contains a setup cell that clones this repository inside Colab and
-installs it with `pip install -e .`.
+Each notebook contains a setup cell that clones this repository inside Colab,
+installs it with `pip install -e .`, and adds the local `src/` directory to the
+notebook path.
 
 Recommended learning path:
 
@@ -144,22 +146,27 @@ python benchmarks/benchmark_fertility.py
 
 Benchmarks print `LOCAL MEASUREMENT ONLY` and measure the current local machine.
 
-## Companion Book Link
+## Companion Book
 
-Book link placeholder: <https://example.com/tokenization-and-embeddings>
+Companion book: *Tokenization and Embeddings in Modern LLMs* by Marco Haruni.
+The manuscript and public book page are maintained separately from this code
+repository.
 
 ## Citation
 
-Citation placeholder:
+If you use this repository, cite:
 
 ```bibtex
-@book{haruni2026tokenization,
-  title={Tokenization and Embeddings in Modern LLMs},
-  subtitle={How Text Becomes Numbers, and Numbers Become Meaning},
+@software{haruni2026forgetokenizer,
+  title={forge-tokenizer},
   author={Haruni, Marco},
-  year={2026}
+  year={2026},
+  url={https://github.com/marcoharuni/forge-tokenizer},
+  license={MIT}
 }
 ```
+
+See `CITATION.cff` for citation metadata.
 
 ## License
 
