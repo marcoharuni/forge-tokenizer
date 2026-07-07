@@ -58,6 +58,27 @@ def token_frequency(tokenizer, texts: list[str]) -> dict[int, int]:
     return dict(counts)
 
 
+def single_token_retention_rate(tokenizer, text: str) -> float:
+    """Return the fraction of word-like runs encoded as exactly one token.
+
+    This metric complements fertility. Fertility says how many tokens are used
+    per word on average; single-token retention asks how often a word remains
+    intact as one token. Empty or wordless text returns ``0.0``.
+
+    Example:
+        >>> from forge_tokenizer import ForgeTokenizer
+        >>> tok = ForgeTokenizer().train("hello world hello", num_merges=20)
+        >>> 0.0 <= single_token_retention_rate(tok, "hello world") <= 1.0
+        True
+    """
+
+    words = regex.findall(r"\p{L}+|\p{N}+", text or "")
+    if not words:
+        return 0.0
+    retained = sum(1 for word in words if len(tokenizer.encode(word)) == 1)
+    return retained / len(words)
+
+
 def renyi_entropy(probs: list[float], alpha: float = 2.5) -> float:
     """Compute Renyi entropy for a probability vector.
 

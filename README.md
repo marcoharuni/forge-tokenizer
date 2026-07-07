@@ -15,8 +15,10 @@ clarity and reproducibility, not maximum tokenizer throughput.
 - Byte-level BPE training from first principles
 - Encode/decode round trips with stable special tokens
 - Tokenizer metrics such as fertility, compression, parity, and formatting overhead
+- Single-token retention rate as a simple complement to fertility
 - Embedding geometry with one-hot vectors, norms, PPMI, SVD, neighbors, and analogies
 - Unembedding mechanics with stable softmax, temperature, top-k, top-p, and sampling
+- Chat-style formatting token overhead
 - A simulated logit lens demonstration
 - Local-only benchmark discipline
 
@@ -56,8 +58,25 @@ You can run the learning notebooks directly in Google Colab:
 
 [![Open Embedding Geometry in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/embedding_geometry.ipynb)
 
+[![Open BPE Merge Trace in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/03_bpe_merge_trace.ipynb)
+
+[![Open Token Tax Lab in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/04_token_tax_lab.ipynb)
+
+[![Open Token ID To Meaning in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/05_token_id_to_meaning.ipynb)
+
+[![Open Chat Formatting Token Tax in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/marcoharuni/forge-tokenizer/blob/main/notebooks/06_chat_formatting_token_tax.ipynb)
+
 Each notebook contains a setup cell that clones this repository inside Colab and
 installs it with `pip install -e .`.
+
+Recommended learning path:
+
+1. `notebooks/tokenizer_playground.ipynb`
+2. `notebooks/03_bpe_merge_trace.ipynb`
+3. `notebooks/04_token_tax_lab.ipynb`
+4. `notebooks/embedding_geometry.ipynb`
+5. `notebooks/05_token_id_to_meaning.ipynb`
+6. `notebooks/06_chat_formatting_token_tax.ipynb`
 
 ## Quickstart
 
