@@ -1,10 +1,5 @@
 # forge-tokenizer
 
-Companion repository for Marco Haruni's technical book:
-
-**Tokenization and Embeddings in Modern LLMs**  
-*How Text Becomes Numbers, and Numbers Become Meaning*
-
 This repository is an educational reference implementation. It is designed for
 clarity and reproducibility, not maximum tokenizer throughput.
 
@@ -146,11 +141,6 @@ python benchmarks/benchmark_fertility.py
 
 Benchmarks print `LOCAL MEASUREMENT ONLY` and measure the current local machine.
 
-## Companion Book
-
-Companion book: *Tokenization and Embeddings in Modern LLMs* by Marco Haruni.
-The manuscript and public book page are maintained separately from this code
-repository.
 
 ## Citation
 
